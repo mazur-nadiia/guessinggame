@@ -1,3 +1,7 @@
-LOGFILE=$(LOGPATH) `date +'%y.%m.%d %H:%M:%S'`
-guessinggame: guessingame.sh
-	gcc -o guessinggame guessingame.sh -I.
+LOGFILE = $(shell date --iso=seconds)
+NUMBOFLINES = $(shell cat guessinggame.sh | wc -l)
+
+README.md:
+ echo "Project title: guessinggame" > README.md
+ echo "Date of making file: "$(LOGFILE) >> README.md
+ echo "Number of lines in guessinggame.sh: "$(NUMBOFLINES) >> README.md

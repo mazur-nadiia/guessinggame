@@ -23,4 +23,3 @@ do
 	read file_number
 	number_check $file_number $actual_n_of_files
 done
-
